@@ -15,6 +15,11 @@ def only_base(request):
     return Response('This view is only in the base configuration.')
 
 def includeme(config):
+    """
+    'includeme' is, by Pyramid convention, a function that can be included
+    in application configuration simply by passing the module name in to
+    config.include() as a string.
+    """
     config.add_route('home', '/')
     config.add_view(home, route_name='home')
     config.add_route('hello', '/hello')

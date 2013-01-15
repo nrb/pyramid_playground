@@ -10,7 +10,7 @@ def new_home(request):
 
 if __name__ == '__main__':
     config = Configurator()
-    config.include('base')
+    config.include('base') # automatically includes 'base.includeme'
     config.add_view(new_hello, route_name='hello')
     config.add_view(new_home, route_name='home')
     app = config.make_wsgi_app()
